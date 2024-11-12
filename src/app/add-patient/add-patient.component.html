@@ -1,24 +1,37 @@
 <div class="add-patient-card">
     <mat-form-field>
-        <mat-label>Full Name</mat-label>
-        <input matInput>      
+      <mat-label>Full Name</mat-label>
+      <input matInput [(ngModel)]="fullName">
     </mat-form-field>
+  
     <mat-form-field>
-        <mat-label>AMKA</mat-label>
-        <input matInput>
+      <mat-label>AMKA</mat-label>
+      <input matInput [(ngModel)]="amka">
     </mat-form-field>
+  
     <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput>
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="address">
     </mat-form-field>
+  
     <mat-form-field>
-        <mat-label>City</mat-label>
-        <input matInput>
+      <mat-label>City</mat-label>
+      <input matInput [(ngModel)]="city">
     </mat-form-field>
+  
     <mat-form-field>
-        <mat-label>Admission Date</mat-label>
-        <input matInput>
+      <mat-label>Admission Date</mat-label>
+      <input matInput [(ngModel)]="admissionDate">
     </mat-form-field>
-
-    <button mat-flat-button>Add Patient</button>
-</div>
+  
+    <button mat-flat-button color="primary" (click)="addPatient()">Add Patient</button>
+  
+    <!-- Display current patients list -->
+    <!-- <h3>Patients List</h3>
+    <ul>
+      <li *ngFor="let patient of patientList">
+        {{ patient.fullName }} - {{ patient.amka }} - {{ patient.address.street }}, {{ patient.address.city }} - {{ patient.admissionDate }}
+      </li>
+    </ul> -->
+  </div>
+  
