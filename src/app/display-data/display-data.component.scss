@@ -1,0 +1,14 @@
+mat-list{
+    text-align: center;
+    div[mat-subheader]{
+        font: {
+            size: 20px;
+            weight: bold;
+        }
+    }
+    ng-container {
+        mat-list-item {
+            padding: 50%;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<mat-list>
+   <div mat-subheader>Patients Data</div>
+   <ng-container *ngFor="let patient of patientData; trackBy: trackById">
+     <mat-list-item>
+       <p matLine>{{ patient.fullName }}</p>
+       <p matLine>AMKA: {{ patient.amka }}</p>
+       <p matLine>Address: {{ patient.address.street }}, {{ patient.address.city }}</p>
+       <p matLine>Admission Date: {{ patient.admissionDate }}</p>
+     </mat-list-item>
+     <mat-divider *ngIf="!isLast(patient)"></mat-divider>
+   </ng-container>
+ </mat-list>
