@@ -1,9 +1,26 @@
-mat-list{
+mat-list {
     text-align: center;
-    div[mat-subheader]{
-        font: {
-            size: 20px;
-            weight: bold;
-        }
+  
+    div[mat-subheader] {
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+
     }
-}
+  
+    div.mat-container {
+      border: 4px solid #023047;
+      padding: 20px;
+      margin: 0 30% 20px;
+      background-color: #90e0ef;
+
+      mat-list-item {
+          p {
+            font: {
+              size: 16px;
+              weight: bold;
+            }
+          }
+         }
+     }
+  }

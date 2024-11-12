@@ -10,7 +10,7 @@ import { Patient } from '../models';
   standalone: true,
   imports: [MatListModule, CommonModule, MatDividerModule],
   templateUrl: './display-data.component.html',
-  styleUrl: './display-data.component.scss'
+  styleUrls: ['./display-data.component.scss']
 })
 export class DisplayDataComponent {
   patientData: Patient[] = patientData;
