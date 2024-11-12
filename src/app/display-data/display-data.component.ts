@@ -14,12 +14,4 @@ import { Patient } from '../models';
 })
 export class DisplayDataComponent {
   patientData: Patient[] = patientData;
-
-  trackById(index: number, patient: Patient): number {
-    return patient.id;
-  }
-
-  isLast(patient: Patient): boolean {
-    return this.patientData[this.patientData.length - 1] === patient;
-  }
 }
