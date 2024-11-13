@@ -25,7 +25,7 @@ export class AddPatientComponent {
   addPatient(): void {
     if (this.fullName && this.amka && this.address && this.city && this.admissionDate) {
       const newPatient: Patient = {
-        id: this.patientList.length + 1, // Generate a new ID based on array length
+        id: this.patientList.length + 1,
         fullName: this.fullName,
         amka: this.amka,
         address: {
@@ -35,7 +35,6 @@ export class AddPatientComponent {
         admissionDate: this.admissionDate,
       };
 
-      // Add new patient to the array and reset form values
       this.patientList.push(newPatient);
       this.resetForm();
     } else {

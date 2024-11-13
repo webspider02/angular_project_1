@@ -1,0 +1,15 @@
+div.search-patient-card {
+    display: flex;
+    text-align: center;
+    div.search-patient-name {
+        button {
+            background-color: green;
+            display: block;
+            // margin: 10px;
+            width: 120px;
+            border: {
+                radius: 0;
+            }
+        }
+    }
+}
