@@ -43,8 +43,22 @@ export class AddPatientComponent {
   }
 
   removePatient(): void {
-    this.patientList.pop();
-  }
+    const index = this.patientList.findIndex(patient => 
+      patient.fullName === this.fullName &&
+      patient.amka === this.amka &&
+      patient.address.street === this.address &&
+      patient.address.city === this.city &&
+      patient.admissionDate === this.admissionDate
+    );
+
+    if (index !== -1) {
+      this.patientList.splice(index, 1);
+      alert("Patient removed successfully.");
+      this.resetForm();
+    } else {
+      alert("Patient not found.");
+    }
+  } 
 
   private resetForm(): void {
     this.fullName = '';
