@@ -1,6 +1,6 @@
 <div class="search-patient-card">
     <div class="search-patient-name">
-      <h4>Patients Names</h4>
+      <h6>Patients Names</h6>
       <ng-container *ngFor="let patient of patientData">
         <button mat-flat-button color="primary" (click)="selectPatient(patient)">
           {{ patient.fullName }}
@@ -8,9 +8,9 @@
       </ng-container>
     </div>
   
-    <div class="patient-details" *ngIf="selectedPatient">
-      <h4>Patient Details</h4>
-      <mat-list>
+    <div class="patient-details">
+      <h6>Patient Details</h6>
+      <mat-list *ngIf="selectedPatient">
         <mat-list-item>ID: {{ selectedPatient.id }}</mat-list-item>
         <mat-list-item>AMKA: {{ selectedPatient.amka }}</mat-list-item>
         <mat-list-item>Name: {{ selectedPatient.fullName }}</mat-list-item>
@@ -19,4 +19,5 @@
       </mat-list>
     </div>
   </div>
+  
   
