@@ -25,13 +25,6 @@
     </mat-form-field>
   
     <button mat-flat-button color="primary" (click)="addPatient()">Add Patient</button>
-  
-    <!-- Display current patients list -->
-    <!-- <h3>Patients List</h3>
-    <ul>
-      <li *ngFor="let patient of patientList">
-        {{ patient.fullName }} - {{ patient.amka }} - {{ patient.address.street }}, {{ patient.address.city }} - {{ patient.admissionDate }}
-      </li>
-    </ul> -->
+    <button id="rmPatient" mat-flat-button (click)="removePatient()">Remove Patient</button>
   </div>
   

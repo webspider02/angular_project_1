@@ -42,6 +42,10 @@ export class AddPatientComponent {
     }
   }
 
+  removePatient(): void {
+    this.patientList.pop();
+  }
+
   private resetForm(): void {
     this.fullName = '';
     this.amka = '';

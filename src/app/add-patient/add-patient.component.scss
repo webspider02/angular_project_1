@@ -13,5 +13,11 @@ div.add-patient-card {
         display: block;
         background-color: green;
         margin-bottom: 10px;
+        width: 180px;
+    }
+
+    button#rmPatient {
+        background-color: red;
+        width: 180px;
     }
 }
