@@ -10,13 +10,15 @@
   
     <div class="patient-details">
       <h6>Patient Details</h6>
-      <mat-list *ngIf="selectedPatient">
-        <mat-list-item>ID: {{ selectedPatient.id }}</mat-list-item>
-        <mat-list-item>AMKA: {{ selectedPatient.amka }}</mat-list-item>
-        <mat-list-item>Name: {{ selectedPatient.fullName }}</mat-list-item>
-        <mat-list-item>Address: {{ selectedPatient.address.street }}, {{ selectedPatient.address.city }}</mat-list-item>
-        <mat-list-item>Admission Date: {{ selectedPatient.admissionDate }}</mat-list-item>
-      </mat-list>
+      <div class="flex-container">
+        <mat-list *ngIf="selectedPatient">
+          <mat-list-item><p>ID: {{ selectedPatient.id }}</p></mat-list-item>
+          <mat-list-item><p>AMKA: {{ selectedPatient.amka }}</p></mat-list-item>
+          <mat-list-item><p>Name: {{ selectedPatient.fullName }}</p></mat-list-item>
+          <mat-list-item><p>Address: {{ selectedPatient.address.street }}, {{ selectedPatient.address.city }}</p></mat-list-item>
+          <mat-list-item><p>Admission Date: {{ selectedPatient.admissionDate }}</p></mat-list-item>
+        </mat-list>
+      </div>
     </div>
   </div>
   

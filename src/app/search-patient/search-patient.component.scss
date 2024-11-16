@@ -5,27 +5,26 @@ div.search-patient-card {
     border: 4px solid #023047;
     margin: 100px 20%;
     height: 60%;
-
-    div {
-        h6 {
-            position: sticky;
-            font: {
-                weight: bold;
-                size: 20px;
-            }
-        }
-    }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 
     div.search-patient-name {
-        // border-left: 1px solid green;
         background-color: white;
         overflow-y: scroll;
+        height: 100%;
+        margin-bottom: 40px;
+
+        h6 {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: white;
+        }
 
         button {
+            z-index: 0;
             background-color: black;
             color: white;
             display: block;
-            // margin: 10px;
             width: 100%;
             border: {
                 radius: 0;
@@ -37,16 +36,36 @@ div.search-patient-card {
         border-left: 4px solid #023047;
         width: 100%;
 
-        mat-list{
+        h6 {
+            height: 0;
+        }
+
+        div.flex-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100%;
+            
 
-            mat-list-item {
-                color: black;
-                font-weight: bold;
+            p {
+                font: {
+                    size: 16px;
+                    weight: bold;
+                }
             }
         }
+
+        // mat-list{
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: center;
+
+        //     mat-list-item {
+        //         color: black;
+        //         font-weight: bold;
+        //     }
+        // }
     }
 }
