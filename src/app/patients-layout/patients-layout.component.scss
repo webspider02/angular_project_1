@@ -8,7 +8,6 @@ header {
         margin-right: 60px;
         a {
             user-select:none;
-            // border: 2px solid purple;        width: 100px;
             font-size: 32px;
             font-weight: bold;
             background-image: linear-gradient(to right, hsl(0, 0%, 100%), rgb(255, 0, 0) );
@@ -32,4 +31,20 @@ header {
     a.topnav:hover {
         opacity: 0.5;
     }
+
+    @media screen and (max-width: 610px) {
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+
+        div#logo {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+mat-drawer-container {
+    height: 100%;
+    width: 100%;
 }
