@@ -34,15 +34,11 @@
 <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
         <h4>Patient Names</h4>
-        <mat-form-field>
-            <mat-label>Names</mat-label>
-            <select matNativeControl>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </select>
-        </mat-form-field>
+        <ng-container *ngFor="let patient of patientData">
+            <button mat-flat-button color="primary" (click)="selectPatient(patient)">
+              {{ patient.fullName }}
+            </button>
+          </ng-container>
     </mat-drawer>
 
     <mat-drawer-content>
