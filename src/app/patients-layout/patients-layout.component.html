@@ -1,35 +1,14 @@
 <header>
     <div id="logo">
-        <a href="#">
+        <a routerLink="/display-data">
             Patients Data
         </a>        
     </div>
 
-    <a href="#" class="topnav">Patients</a>
-    <a href="#" class="topnav">Add Patient</a>
-    <a href="#" class="topnav">Search Patient</a>
+    <a routerLink="/display-data" class="topnav">Patients</a>
+    <a routerLink="/add-patient" class="topnav">Add Patient</a>
+    <a routerLink="/search-patient" class="topnav">Search Patient</a>
 </header>
-
-<!-- <div class="container">
-    <mat-drawer-container class="example-container">
-        <mat-drawer mode="side" opened>
-            <h4>Patient Names</h4>
-            <mat-form-field>
-                <mat-label>Names</mat-label>
-                <select matNativeControl>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </mat-form-field>
-        </mat-drawer>
-    
-        <mat-drawer-content>
-            <div>something</div>
-        </mat-drawer-content>
-    </mat-drawer-container>
-</div> -->
 
 <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
@@ -42,6 +21,6 @@
     </mat-drawer>
 
     <mat-drawer-content>
-        <div>something</div>
+        <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

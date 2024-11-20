@@ -1,4 +1,4 @@
-<mat-list>
+<!-- <mat-list>
    <div mat-subheader>Patients Data</div>
    <ng-container *ngFor="let patient of patientData">
     <div class="mat-container">
@@ -8,6 +8,26 @@
       <mat-list-item><p>Admission Date: {{ patient.admissionDate }}</p></mat-list-item>
     </div>
    </ng-container>
+ </mat-list> -->
 
-   <app-add-patient></app-add-patient>
- </mat-list>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Amka</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Admission Date</th>
+  </tr>
+
+  <ng-container *ngFor="let patient of patientData">
+    <tr>
+      <td> {{ patient.id }} </td>
+      <td> {{ patient.fullName }} </td>
+      <td> {{ patient.amka }} </td>
+      <td> {{ patient.address.street }} </td>
+      <td> {{ patient.address.city }} </td>
+      <td> {{ patient.admissionDate }} </td>
+    </tr>
+  </ng-container>
+</table>
