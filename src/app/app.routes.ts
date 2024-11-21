@@ -4,19 +4,19 @@ import { SearchPatientComponent } from './search-patient/search-patient.componen
 import { AddPatientComponent } from './add-patient/add-patient.component';
 
 export const routes: Routes = [
-    { 
-        path: '', redirectTo: '/display-data', pathMatch: 'full' 
-    },
     {
         path: 'display-data',
-        component: DisplayDataComponent
+        // redirectTo: '/display-data',
+        component: DisplayDataComponent,
     },
     {
         path: 'search-patient',
-        component: SearchPatientComponent
+        // redirectTo: '/search-patient',
+        component: SearchPatientComponent,
     },
     {
         path: 'add-patient',
-        component: AddPatientComponent
-    }
+        // redirectTo: '/add-patient',
+        component: AddPatientComponent,
+    },
 ];

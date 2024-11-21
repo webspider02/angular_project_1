@@ -9,12 +9,13 @@ import { MatInput } from '@angular/material/input';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { patientData } from '../data';
 import { Patient } from '../models';
+import { SearchPatientComponent } from '../search-patient/search-patient.component';
 import { AddPatientComponent } from "../add-patient/add-patient.component";
 
 @Component({
   selector: 'app-patients-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, DisplayDataComponent, CommonModule, MatCardModule, MatSidenavModule, MatSelectModule, MatFormField, MatInput, AddPatientComponent],
+  imports: [RouterOutlet, RouterLink, SearchPatientComponent, DisplayDataComponent, CommonModule, MatCardModule, MatSidenavModule, MatSelectModule, MatFormField, MatInput, AddPatientComponent],
   templateUrl: './patients-layout.component.html',
   styleUrl: './patients-layout.component.scss'
 })
