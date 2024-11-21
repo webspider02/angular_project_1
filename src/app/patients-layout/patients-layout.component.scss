@@ -55,6 +55,7 @@ mat-drawer-container {
         align-items:center;
         justify-content: center;
         border-radius: 0;
+        border: 6px solid #000000;
         width: 200px;
         height: 100vh;
 
@@ -69,5 +70,9 @@ mat-drawer-container {
             padding: 10px;
             overflow-y: scroll;
         }
+    }
+
+    mat-drawer-content {
+        border: 6px solid #000000;
     }
 }
