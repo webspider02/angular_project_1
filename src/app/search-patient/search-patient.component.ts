@@ -19,5 +19,4 @@ export class SearchPatientComponent {
   selectPatient(patient: Patient): void {
     this.selectedPatient = patient;
   }
-
 }
