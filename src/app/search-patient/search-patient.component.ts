@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { patientData } from '../data';
 import { Patient } from '../models';
+import { PatientService } from '../shared/patient.service';
 
 @Component({
   selector: 'app-search-patient',
@@ -14,9 +15,15 @@ import { Patient } from '../models';
 })
 export class SearchPatientComponent {
   patientData: Patient[] = patientData
-  selectedPatient: Patient | null = null
 
-  selectPatient(patient: Patient): void {
-    this.selectedPatient = patient;
+  selectedName: string | null = null;
+
+  constructor(private patientService: PatientService) {}
+
+  ngOnInit(): void {
+    // Subscribe to the name observable to get updates
+    this.patientService.selectedPatientName$.subscribe((name) => {
+      this.selectedName = name;
+    });
   }
 }

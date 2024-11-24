@@ -11,7 +11,7 @@ import { patientData } from '../data';
 import { Patient } from '../models';
 import { SearchPatientComponent } from '../search-patient/search-patient.component';
 import { AddPatientComponent } from "../add-patient/add-patient.component";
-
+import { PatientService } from '../shared/patient.service';
 @Component({
   selector: 'app-patients-layout',
   standalone: true,
@@ -22,9 +22,9 @@ import { AddPatientComponent } from "../add-patient/add-patient.component";
 export class PatientsLayoutComponent {
   patientData: Patient[] = patientData;
 
-  selectedPatient: Patient | null = null
+  constructor(private patientService: PatientService) {}
 
-  selectPatient(patient: Patient): void {
-    this.selectedPatient = patient;
+  selectPatient(patient: any): void {
+    this.patientService.setSelectedPatientName(patient.fullName);
   }
 }
