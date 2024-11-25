@@ -14,16 +14,16 @@ import { PatientService } from '../shared/patient.service';
   styleUrl: './search-patient.component.scss'
 })
 export class SearchPatientComponent {
-  patientData: Patient[] = patientData
-
+  patientData: Patient[] = patientData;
   selectedName: string | null = null;
+  selectedPatient: Patient | null = null;
 
   constructor(private patientService: PatientService) {}
 
   ngOnInit(): void {
-    // Subscribe to the name observable to get updates
     this.patientService.selectedPatientName$.subscribe((name) => {
       this.selectedName = name;
+      this.selectedPatient = this.patientData.find((p) => p.fullName === name) || null;
     });
   }
 }

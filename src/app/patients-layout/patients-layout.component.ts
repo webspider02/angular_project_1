@@ -24,7 +24,8 @@ export class PatientsLayoutComponent {
 
   constructor(private patientService: PatientService) {}
 
-  selectPatient(patient: any): void {
+  selectPatient(patient: Patient): void {
     this.patientService.setSelectedPatientName(patient.fullName);
   }
+  
 }
