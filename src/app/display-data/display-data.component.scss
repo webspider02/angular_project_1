@@ -1,8 +1,12 @@
 table {
   width: 100%;
-  height: 100%;
+  border-collapse: collapse;
 
   tr {
+    th {
+      background-color: #adb5bd;
+    }
+
     td {
       text-align: center;
     }

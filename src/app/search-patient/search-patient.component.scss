@@ -1,11 +1,15 @@
 table {
     width: 100%;
+    border-collapse: collapse;
 
     tr {
+      th {
+        background-color: #adb5bd;
+      }
+
       th, td {
         text-align: center;  
         vertical-align: top; 
-        border: 2px solid red; 
       }
     }
   }
