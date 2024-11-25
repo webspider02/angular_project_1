@@ -63,12 +63,35 @@ mat-drawer-container {
             text-align: center;
         }
 
+        p {
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            position: sticky;
+            text-align: center;
+            color: black;
+            z-index: 2;
+            top: 0;
+
+            font: {
+                size: 20px;
+                weight: bold;
+            }
+        }
         button[mat-flat-button] {
-            background: #000000;
+            z-index: 1;
+            background: #212529;
             color: white;
             width: 100%;
             padding: 10px;
             overflow-y: scroll;
+            outline: none;
+            border: none;
+        }
+
+        button[mat-flat-button]:hover {
+            opacity: 0.5;
+            cursor: pointer;
         }
     }
 
