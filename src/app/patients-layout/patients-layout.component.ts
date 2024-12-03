@@ -12,6 +12,7 @@ import { Patient } from '../models';
 import { SearchPatientComponent } from '../search-patient/search-patient.component';
 import { AddPatientComponent } from "../add-patient/add-patient.component";
 import { PatientService } from '../shared/patient.service';
+import { get } from 'node:http';
 @Component({
   selector: 'app-patients-layout',
   standalone: true,
@@ -21,6 +22,8 @@ import { PatientService } from '../shared/patient.service';
 })
 export class PatientsLayoutComponent {
   patientData: Patient[] = patientData;
+  selectedPatientName: string | null = null;
+  // showButtons: boolean = false;
 
   constructor(private patientService: PatientService) {}
 
@@ -28,4 +31,8 @@ export class PatientsLayoutComponent {
     this.patientService.setSelectedPatientName(patient.fullName);
   }
   
+  // dropdown function
+  // toggleDropDown(): void {
+  //   this.showButtons = !this.showButtons;
+  // }
 }
