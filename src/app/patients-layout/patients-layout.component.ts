@@ -23,7 +23,7 @@ import { get } from 'node:http';
 export class PatientsLayoutComponent {
   patientData: Patient[] = patientData;
   selectedPatientName: string | null = null;
-  // showButtons: boolean = false;
+  showButtons: boolean = false;
 
   constructor(private patientService: PatientService) {}
 
@@ -32,7 +32,7 @@ export class PatientsLayoutComponent {
   }
   
   // dropdown function
-  // toggleDropDown(): void {
-  //   this.showButtons = !this.showButtons;
-  // }
+  toggleDropDown(): void {
+    this.showButtons = !this.showButtons;
+  }
 }

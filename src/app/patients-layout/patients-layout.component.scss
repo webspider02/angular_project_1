@@ -96,6 +96,15 @@ mat-drawer-container {
             opacity: 0.5;
             cursor: pointer;
         }
+
+        button[mat-flat-button]:active {
+            background: #212529;
+            color: white;
+        }
+        
+        // .hidden {
+        //     display: none;
+        // }
     }
 
     mat-drawer-content {

@@ -12,9 +12,9 @@
 
 <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
-        <div id="patients-names" onclick="dropDownFun()">Patient's Names</div>
+        <div id="patients-names" onclick="toggleDropDown()">Patient's Names</div>
         <ng-container *ngFor="let patient of patientData">
-            <button mat-flat-button color="primary"  (click)="selectPatient(patient)"> <!-- mat-flat-button color="primary" -->
+            <button mat-flat-button color="primary" *ngIf="showButtons" (click)="selectPatient(patient)"> <!-- mat-flat-button color="primary" -->
               {{ patient.fullName }}
             </button>
           </ng-container>
