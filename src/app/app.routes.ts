@@ -4,6 +4,11 @@ import { SearchPatientComponent } from './search-patient/search-patient.componen
 import { AddPatientComponent } from './add-patient/add-patient.component';
 
 export const routes: Routes = [
+    // {
+    //     path: '', 
+    //     redirectTo: '/display-data',
+    //     pathMatch: 'full' 
+    // },
     {
         path: 'display-data',
         // redirectTo: '/display-data',
