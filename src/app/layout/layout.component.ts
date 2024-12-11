@@ -9,6 +9,8 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+import { PatientsComponent } from '../patients/patients.component';
+
 import { patientData } from '../data'
 import { Patient } from '../models';
 
@@ -16,6 +18,7 @@ import { Patient } from '../models';
   selector: 'app-layout',
   standalone: true,
   imports: [
+    PatientsComponent,
     CommonModule,
     MatInputModule,
     MatFormFieldModule,
