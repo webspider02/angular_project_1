@@ -17,5 +17,17 @@ mat-drawer-container {
     mat-drawer {
         width: 200px;
         border: 2px solid red;
+
+        button {
+            width: 100%;
+        }
+
+        // mat-menu {
+        //     width: 100%;
+
+        //     button {
+        //         width: 100%;
+        //     }
+        // }
     }
 }
