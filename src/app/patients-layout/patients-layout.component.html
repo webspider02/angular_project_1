@@ -1,0 +1,27 @@
+<header>
+    <div id="logo">
+        <a routerLink="/display-data">
+            Patients Data
+        </a>        
+    </div>
+
+    <a routerLink="/display-data" class="topnav">Patients</a>
+    <a routerLink="/add-patient" class="topnav">Add Patient</a>
+    <a routerLink="/search-patient" class="topnav">Search Patient</a>
+</header>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <h4>Patient Names</h4>
+        <ng-container *ngFor="let patient of patientData">
+            <button mat-flat-button color="primary" (click)="selectPatient(patient)">
+              {{ patient.fullName }}
+            </button>
+          </ng-container>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <!-- <router-outlet></router-outlet> -->
+        <!-- <app-search-patient [selectedPatient]="selectedPatient"></app-search-patient> -->
+    </mat-drawer-content>
+</mat-drawer-container>

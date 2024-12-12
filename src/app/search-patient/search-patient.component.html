@@ -1,0 +1,44 @@
+<!-- <div class="search-patient-card">
+    <div class="search-patient-name">
+      <h6>Patients Names</h6>
+      <ng-container *ngFor="let patient of patientData">
+        <button mat-flat-button color="primary" (click)="selectPatient(patient)">
+          {{ patient.fullName }}
+        </button>
+      </ng-container>
+    </div>
+  
+    <div class="patient-details">
+      <h6>Patient Details</h6>
+      <div class="flex-container">
+        <mat-list *ngIf="selectedPatient">
+          <mat-list-item><p>ID: {{ selectedPatient.id }}</p></mat-list-item>
+          <mat-list-item><p>AMKA: {{ selectedPatient.amka }}</p></mat-list-item>
+          <mat-list-item><p>Name: {{ selectedPatient.fullName }}</p></mat-list-item>
+          <mat-list-item><p>Address: {{ selectedPatient.address.street }}, {{ selectedPatient.address.city }}</p></mat-list-item>
+          <mat-list-item><p>Admission Date: {{ selectedPatient.admissionDate }}</p></mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </div> -->
+
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Amka</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Admission Date</th>
+    </tr>
+   
+      <tr *ngIf="selectedPatient">
+        <td> {{ selectedPatient.id }} </td>
+        <td> {{ selectedPatient.fullName }} </td>
+        <td> {{ selectedPatient.amka }} </td>
+        <td> {{ selectedPatient.address.street }} </td>
+        <td> {{ selectedPatient.address.city }} </td>
+        <td> {{ selectedPatient.admissionDate }} </td>
+      </tr>
+  </table> 
+  
