@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLink } from '@angular/router';
 import { AddPatientComponent } from '../add-patient/add-patient.component';
 import { DisplayDataComponent } from '../display-data/display-data.component';
 import { patientData } from '../data';
@@ -10,6 +10,7 @@ import { Patient } from '../models';
   selector: 'app-patients',
   standalone: true,
   imports: [
+    RouterLink,
     RouterModule,
     DisplayDataComponent,
     AddPatientComponent,

@@ -8,16 +8,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 import { PatientsComponent } from '../patients/patients.component';
 
 import { patientData } from '../data'
 import { Patient } from '../models';
+import { Router } from 'express';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [
+    RouterOutlet,
     PatientsComponent,
     CommonModule,
     MatInputModule,

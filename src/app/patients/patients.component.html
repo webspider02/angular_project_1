@@ -7,10 +7,10 @@
 <ul class="patients">
     <li *ngFor="let patient of patientData">
         <a href="#">
-        <!-- <a RouterLink="/patient-detail/{{ patient.id }}"> -->
+        <!-- <a [RouterLink]="['/patient-detail', patient.id]"> -->
             <span>{{ patient.fullName }}</span>
         </a>
         <button type="button" class="delete" title="delete patient"
-            (click)="delete(patient)">x</button>
+         (click)="delete(patient)">x</button>
     </li>
 </ul>
