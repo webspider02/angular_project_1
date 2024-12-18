@@ -33,11 +33,13 @@ mat-drawer-container {
         border-radius: 0;
 
         button {
+            user-select: none;
             width: 100%;
             color: $toolbarColor;
         }
 
         button:hover {
+            cursor: pointer;
             opacity: 0.5;
         }
 

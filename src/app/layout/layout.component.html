@@ -9,7 +9,10 @@
         </button> -->
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
           <div>
-            <img ngSrc="app/images/user.png" width="30px" height="30px">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128
+               0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 
+               29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+            </svg>
           </div>
         </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -20,20 +23,14 @@
   
 <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
-        <button mat-button [matMenuTriggerFor]="menu">Users</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-        <button mat-button [matMenuTriggerFor]="menu">Team</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
+        <button mat-button routerLink="/patients">Users</button>
+        <button mat-button routerLink="/settings">Settings</button>
     </mat-drawer>
     
     <mat-drawer-content>
-        <app-patients></app-patients>
+        <router-outlet></router-outlet>
+         <!-- <app-settings></app-settings> -->
+        <!-- <app-patients></app-patients> -->
     </mat-drawer-content>
 </mat-drawer-container>
   

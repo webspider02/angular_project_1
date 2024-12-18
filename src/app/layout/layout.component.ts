@@ -11,16 +11,19 @@ import {MatInputModule} from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 
 import { PatientsComponent } from '../patients/patients.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 import { patientData } from '../data'
 import { Patient } from '../models';
 import { Router } from 'express';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [
+    RouterLink,
+    SettingsComponent,
     NgOptimizedImage,
     MatListModule,
     RouterOutlet,
