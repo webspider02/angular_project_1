@@ -1,11 +1,19 @@
 <mat-toolbar>
+     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+         <mat-icon >menu</mat-icon>
+     </button>
     <span>Patients</span>
     <div class="button-container">
+        <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>avatar</mat-icon>
+        </button> -->
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>search</mat-icon>
+          <div>
+            <img ngSrc="app/images/user.png" width="30px" height="30px">
+          </div>
         </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
+          <mat-icon>share</mat-icon>
         </button>
     </div>
 </mat-toolbar>
