@@ -2,13 +2,11 @@
 
 <app-add-patient></app-add-patient>
 
-<!-- <app-display-data></app-display-data> -->
-
 <ul class="patients">
     <li *ngFor="let patient of patientData">
-        <!-- <a href="#"> -->
-        <a [routerLink]="['/patient-detail', patient.id]">
-            <span>{{ patient.fullName }}</span>
+        <a routerLink="/patient-detail/{{ patient.id }}">
+            <span id="id">{{ patient.id }}</span>
+            <span id="name">{{ patient.fullName }}</span>
         </a>
         <button type="button" class="delete" title="delete patient"
          (click)="delete(patient)">x</button>

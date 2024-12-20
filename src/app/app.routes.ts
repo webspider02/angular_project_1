@@ -7,7 +7,7 @@ import { SettingsComponent } from './settings/settings.component';
 export const routes: Routes = [
     { path: '', component: PatientsComponent },
     { path: 'patients', component: PatientsComponent },
-    { path: 'patient-detail', component: PatientDetailComponent },
+    { path: 'patient-detail/:id', component: PatientDetailComponent },
     { path: 'settings', component: SettingsComponent }
 ];
 
