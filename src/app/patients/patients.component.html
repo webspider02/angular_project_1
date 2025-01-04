@@ -1,27 +1,5 @@
 <h2>Patients</h2>
 
-<!-- <app-add-patient></app-add-patient> -->
-
-<!-- <ul class="patients">
-    <li *ngFor="let patient of patientData">
-        <a routerLink="/patient-detail/{{ patient.id }}">
-            <span id="id">{{ patient.id }}</span>
-            <span id="name">{{ patient.fullName }}</span>
-        </a>
-        <button type="button" class="delete" title="delete patient"
-         (click)="delete(patient)">x</button>
-    </li>
-</ul> -->
-
-<!-- <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let patient of patientData">
-        <a routerLink="/patient-detail/{{ patient.id }}">
-            <span id="id">{{ patient.id }}</span>
-            <span id="name">{{ patient.fullName }}</span>
-        </a>
-        <button type="button" class="delete" title="delete patient"
-         (click)="delete(patient)">x</button>
-    </mat-list-item>
-</mat-list> -->
+<button mat-flat-button color="primary" [routerLink]="'/add-patient'">Add Patient</button>
 
 <app-display-data></app-display-data>
