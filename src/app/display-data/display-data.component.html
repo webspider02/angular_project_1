@@ -12,7 +12,7 @@
     <tr>
       <td> {{ patient.id }} </td>
       <td>
-        <a routerLink="/patient-detail/{{ patient.id }}">
+        <a (click)="selectPatient(patient)"> <!--/patient-detail/{{ patient.id }} -->
           {{ patient.fullName }}
         </a>
       </td>

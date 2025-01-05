@@ -1,0 +1,25 @@
+<div *ngIf="selectedPatient" class="details-card">
+    <h1>Details</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Amka</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Admission Date</th>
+      </tr>
+      <tr>
+        <td>{{ selectedPatient.id }}</td>
+        <td>{{ selectedPatient.fullName }}</td>
+        <td>{{ selectedPatient.amka }}</td>
+        <td>{{ selectedPatient.address.street }}</td>
+        <td>{{ selectedPatient.address.city }}</td>
+        <td>{{ selectedPatient.admissionDate }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="!selectedPatient">
+    <p>No patient selected.</p>
+  </div>
+  
