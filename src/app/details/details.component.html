@@ -1,5 +1,9 @@
 <div *ngIf="selectedPatient" class="details-card">
     <h1>Details</h1>
+
+    <button mat-flat-button color="primary" routerLink="/patients">Back</button>
+    <button mat-flat-button color="primary" routerLink="/patient-detail/{{selectedPatient.id}}">Edit</button>
+
     <table>
       <tr>
         <th>Id</th>

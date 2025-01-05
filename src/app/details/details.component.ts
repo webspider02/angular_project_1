@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterLink } from '@angular/router';
 import { PatientService } from '../patient.service';
+import { MatButton } from '@angular/material/button';
 
 import { patientData } from '../data';
 import { Patient } from '../models';
@@ -10,6 +11,7 @@ import { Patient } from '../models';
   selector: 'app-details',
   standalone: true,
   imports: [
+    MatButton,
     RouterModule,
     RouterLink,
     CommonModule
