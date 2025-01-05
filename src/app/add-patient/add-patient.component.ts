@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AddService } from '../add.service';
 import {  patientData } from '../data';
 import { Patient } from '../models';
 
@@ -13,19 +14,20 @@ import { Patient } from '../models';
   templateUrl: './add-patient.component.html',
   styleUrl: './add-patient.component.scss'
 })
-export class AddPatientComponent {
-  patientList: Patient[] = patientData;
 
+export class AddPatientComponent {
   fullName: string = '';
   amka: string = '';
   address: string = '';
   city: string = '';
   admissionDate: string = '';
 
+  constructor(private patientService: AddService) {}
+
   addPatient(): void {
     if (this.fullName && this.amka && this.address && this.city && this.admissionDate) {
       const newPatient: Patient = {
-        id: this.patientList.length + 1,
+        id: this.patientService.getPatients().length + 1,
         fullName: this.fullName,
         amka: this.amka,
         address: {
@@ -35,7 +37,7 @@ export class AddPatientComponent {
         admissionDate: this.admissionDate,
       };
 
-      this.patientList.push(newPatient);
+      this.patientService.addPatient(newPatient);
       this.resetForm();
     } else {
       alert("Please fill out all fields.");
@@ -43,22 +45,25 @@ export class AddPatientComponent {
   }
 
   removePatient(): void {
-    const index = this.patientList.findIndex(patient => 
-      patient.fullName === this.fullName &&
-      patient.amka === this.amka &&
-      patient.address.street === this.address &&
-      patient.address.city === this.city &&
-      patient.admissionDate === this.admissionDate
-    );
+    const patientToRemove: Patient = {
+      id: 0, // ID is not necessary for comparison in service
+      fullName: this.fullName,
+      amka: this.amka,
+      address: {
+        street: this.address,
+        city: this.city,
+      },
+      admissionDate: this.admissionDate,
+    };
 
-    if (index !== -1) {
-      this.patientList.splice(index, 1);
+    const removed = this.patientService.removePatient(patientToRemove);
+    if (removed) {
       alert("Patient removed successfully.");
       this.resetForm();
     } else {
       alert("Patient not found.");
     }
-  } 
+  }
 
   private resetForm(): void {
     this.fullName = '';
