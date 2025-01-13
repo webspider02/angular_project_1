@@ -27,6 +27,7 @@ mat-drawer-container {
     height: 90%;
 
     mat-drawer {
+        z-index: -1;
         width: 200px;
         background-color: $sidenavBgColor;
         border: 4px solid #000000;
