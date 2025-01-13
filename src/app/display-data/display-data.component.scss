@@ -5,18 +5,14 @@ table {
   tr {
     td {
       text-align: center;
-    }
 
-    a {
-      color: blue;
-    }
+      a {
+        margin-right: 10px;
+      }
 
-    a:hover {
-      cursor: pointer;
-    }
-
-    a:active {
-      color: black;
+      a:hover { 
+        cursor: pointer;
+      }
     }
   }
 }
