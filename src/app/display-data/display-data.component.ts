@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule, Router } from '@angular/router';
 import { PatientService } from '../patient.service';
 import { AddPatientComponent } from '../add-patient/add-patient.component';
+import { PatientDetailComponent } from '../patient-detail/patient-detail.component';
 import  { patientData }  from '../data';
 import { Patient } from '../models';
 
@@ -19,6 +20,7 @@ import { Patient } from '../models';
     MatListModule,
     CommonModule,
     MatDividerModule,
+    PatientDetailComponent,
     AddPatientComponent
   ],
   templateUrl: './display-data.component.html',
@@ -27,10 +29,24 @@ import { Patient } from '../models';
 export class DisplayDataComponent {
   patientData: Patient[] = patientData;
 
-  constructor(private patientService: PatientService, private router: Router) {}
+  selectedPatient: Patient | null = null;
+
+  constructor(private patientService: PatientService ,private router: Router) {}
+
+  ngOnInit(): void {
+    this.selectedPatient = this.patientService.getSelectedPatient();
+  }
 
   selectPatient(patient: Patient): void {
     this.patientService.setSelectedPatient(patient);
     this.router.navigate(['/details']);
+    this.openModal();
+  }
+
+  openModal(): void {
+    const modal = document.getElementById('edit-modal');
+    if (modal) {
+      modal.style.display = 'block';
+    }
   }
 }

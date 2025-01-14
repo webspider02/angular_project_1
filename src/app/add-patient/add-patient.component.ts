@@ -38,7 +38,7 @@ export class AddPatientComponent {
       };
 
       this.patientService.addPatient(newPatient);
-      
+
       this.resetForm();
       this.onCancel();
     } else {
@@ -48,7 +48,7 @@ export class AddPatientComponent {
 
   removePatient(): void {
     const patientToRemove: Patient = {
-      id: 0, // ID is not necessary for comparison in service
+      id: 0,
       fullName: this.fullName,
       amka: this.amka,
       address: {
