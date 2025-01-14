@@ -1,11 +1,11 @@
 <h2>Patients</h2>
 
-<button mat-flat-button color="primary" [routerLink]="'/add-patient'">Add Patient</button>
+<button mat-flat-button color="primary" (click)="openModal()">Add Patient</button>
 
 <app-display-data></app-display-data>
 
-<div class="modal">
+<div id="modal">
     <div class="modal-content">
-        <app-add-patient></app-add-patient>
+        <app-add-patient (cancel)="closeModal()"></app-add-patient>
     </div> 
 </div>

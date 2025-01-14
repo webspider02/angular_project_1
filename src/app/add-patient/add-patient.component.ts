@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -38,7 +38,9 @@ export class AddPatientComponent {
       };
 
       this.patientService.addPatient(newPatient);
+      
       this.resetForm();
+      this.onCancel();
     } else {
       alert("Please fill out all fields.");
     }
@@ -71,5 +73,11 @@ export class AddPatientComponent {
     this.address = '';
     this.city = '';
     this.admissionDate = '';
+  }
+
+  @Output() cancel=new EventEmitter<void>();
+
+  onCancel(): void {
+    this.cancel.emit();
   }
 }

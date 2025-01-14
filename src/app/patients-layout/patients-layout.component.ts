@@ -22,9 +22,9 @@ import { AddPatientComponent } from "../add-patient/add-patient.component";
 export class PatientsLayoutComponent {
   patientData: Patient[] = patientData;
 
-  selectedPatient: Patient | null = null
+ selectedPatient: Patient | null = null
 
   selectPatient(patient: Patient): void {
     this.selectedPatient = patient;
-  }
+  } 
 }

@@ -34,5 +34,19 @@ export class PatientsComponent {
       this.patientData.splice(index, 1);
     }
   }
+
+  openModal(): void {
+    const modal = document.getElementById('modal');
+    if (modal) {
+      modal.style.display = 'block';
+    }
+  }
+
+  closeModal(): void {
+    const modal = document.getElementById('modal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+  }
   
 }
