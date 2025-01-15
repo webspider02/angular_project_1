@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -14,11 +14,9 @@ import { EditService } from '../edit.service';
   standalone: true,
   imports: [
     RouterLink,
-    // Angular modules
     RouterModule,
     CommonModule,
     FormsModule,
-    // Material modules
     MatInputModule,
     MatButtonModule,
   ],
@@ -26,31 +24,24 @@ import { EditService } from '../edit.service';
   styleUrls: ['./patient-detail.component.scss'],
 })
 export class PatientDetailComponent implements OnInit {
-  patient: Patient | undefined;
+  @Input() patient: Patient | undefined;
+  @Output() closeModal = new EventEmitter<void>();
+
+  constructor(private router: Router, private editService: EditService) {}
+
   fullName: string = '';
   amka: string = '';
   address: string = '';
   city: string = '';
   admissionDate: string = '';
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private patientService: EditService
-  ) {}
-
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id')); // Get patient ID from the route
-    this.patient = this.patientService.getPatientById(id);
-
     if (this.patient) {
       this.fullName = this.patient.fullName;
       this.amka = this.patient.amka;
       this.address = this.patient.address.street;
       this.city = this.patient.address.city;
       this.admissionDate = this.patient.admissionDate;
-    } else {
-      console.error('Patient not found!');
     }
   }
 
@@ -59,7 +50,7 @@ export class PatientDetailComponent implements OnInit {
       console.error('No patient to update!');
       return;
     }
-
+  
     const updatedPatient: Patient = {
       ...this.patient,
       fullName: this.fullName,
@@ -71,7 +62,8 @@ export class PatientDetailComponent implements OnInit {
       admissionDate: this.admissionDate,
     };
 
-    this.patientService.updatePatient(updatedPatient);
-    this.router.navigate(['/patients']);
+    this.editService.updatePatient(updatedPatient); // Update the patient in the service
+
+    this.closeModal.emit();
   }
 }

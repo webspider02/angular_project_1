@@ -24,7 +24,7 @@
       <input matInput [(ngModel)]="admissionDate">
     </mat-form-field>
   
-    <button mat-flat-button color="primary" [routerLink]="'/patients'">Back</button>  <!--(click)="goBack()"-->
     <button mat-flat-button color="primary" (click)="save()">Save</button> <!--(click)="save()"-->
+    <button mat-flat-button color="primary" class="rmPatient" (click)="closeModal.emit()">Cancel</button>  <!--(click)="goBack()"-->
 
   </div>
