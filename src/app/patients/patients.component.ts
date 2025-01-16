@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, RouterLink } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 import { AddPatientComponent } from '../add-patient/add-patient.component';
 import { DisplayDataComponent } from '../display-data/display-data.component';
@@ -14,6 +15,7 @@ import { Patient } from '../models';
   selector: 'app-patients',
   standalone: true,
   imports: [
+    FormsModule,
     MatButtonModule,
     MatListModule,
     RouterLink,
@@ -26,14 +28,9 @@ import { Patient } from '../models';
   styleUrl: './patients.component.scss'
 })
 export class PatientsComponent {
-  patientData: Patient[] = patientData;
-
-  delete(patient: Patient): void {
-    const index = this.patientData.findIndex(p => p.id === patient.id);
-    if (index !== -1) {
-      this.patientData.splice(index, 1);
-    }
-  }
+  patientData: Patient[] = patientData; // Original data
+  filteredPatients: Patient[] = [...this.patientData]; // Filtered data
+  searchTerm: string = ''; // Search term
 
   openModal(): void {
     const modal = document.getElementById('modal');

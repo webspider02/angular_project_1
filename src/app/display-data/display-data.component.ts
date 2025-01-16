@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
@@ -30,6 +30,22 @@ export class DisplayDataComponent {
   patientData: Patient[] = patientData;
 
   selectedPatient: Patient | null = null;
+
+  @Input() searchTerm: string = ''; // Receive search term from parent
+  filteredPatients: Patient[] = [...this.patientData]; // Filtered data
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['searchTerm']) {
+      this.filterPatients();
+    }
+  }
+
+  filterPatients(): void {
+    const lowercasedTerm = this.searchTerm.toLowerCase();
+    this.filteredPatients = this.patientData.filter(patient =>
+      patient.fullName.toLowerCase().includes(lowercasedTerm)
+    );
+  }
 
   openModal(patient: Patient): void {
     this.selectedPatient = patient;

@@ -9,7 +9,7 @@
     <th>Action</th>
   </tr>
 
-  <ng-container *ngFor="let patient of patientData">
+  <ng-container *ngFor="let patient of filteredPatients">
     <tr>
       <td> {{ patient.id }} </td>
       <td> {{ patient.fullName }} </td>

@@ -1,8 +1,16 @@
-<h2>Patients</h2>
+ <div class="search-patient-card">
+    <input
+        type="text"
+        placeholder="Search Patient"
+        [(ngModel)]="searchTerm"
+    />
+  
+    <button mat-flat-button color="primary" (click)="openModal()">Add Patient</button>
+ </div>
 
-<button mat-flat-button color="primary" (click)="openModal()">Add Patient</button>
 
-<app-display-data></app-display-data>
+
+<app-display-data  [searchTerm]="searchTerm"></app-display-data>
 
 <div id="modal">
     <div class="modal-content">
