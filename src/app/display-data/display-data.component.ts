@@ -34,29 +34,50 @@ export class DisplayDataComponent {
   selectedPatient: Patient | null = null;
 
   @Input() searchTerm: string = '';
-  filteredPatients: Patient[] = [...this.patientData]; 
+  // filteredPatients: Patient[] = [...this.patientData]; 
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['searchTerm']) {
+      this.filterPatients();  // Trigger filtering when the search term changes
+    }
+  }
+
+  // Filter patients based on the search term
+  filterPatients(): void {
+    const searchTermLower = this.searchTerm.toLowerCase();
+
+    // Filter patientData directly
+    this.patientData = patientData.filter(patient => {
+      return (
+        patient.fullName.toLowerCase().includes(searchTermLower) ||
+        patient.amka.toLowerCase().includes(searchTermLower) ||
+        patient.address.street.toLowerCase().includes(searchTermLower) ||
+        patient.address.city.toLowerCase().includes(searchTermLower)
+      );
+    });
+  }
 
   currentPage: number = 1; 
   itemsPerPage: number = 5;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['searchTerm']) {
-      this.filterPatients();
-    }
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes['searchTerm']) {
+  //     this.filterPatients();
+  //   }
+  // }
 
-  get paginatedPatients(): Patient[] {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    return this.filteredPatients.slice(startIndex, startIndex + this.itemsPerPage);
-  }
+  // get paginatedPatients(): Patient[] {
+  //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+  //   return this.filteredPatients.slice(startIndex, startIndex + this.itemsPerPage);
+  // }
 
-  filterPatients(): void {
-    const lowercasedTerm = this.searchTerm.toLowerCase();
-    this.filteredPatients = this.patientData.filter(patient => // filteredPatients
-      patient.fullName.toLowerCase().includes(lowercasedTerm)
-    );
-    this.currentPage = 1;
-  }
+  // filterPatients(): void {
+  //   const lowercasedTerm = this.searchTerm.toLowerCase();
+  //   this.filteredPatients = this.patientData.filter(patient => // filteredPatients
+  //     patient.fullName.toLowerCase().includes(lowercasedTerm)
+  //   );
+  //   this.currentPage = 1;
+  // }
 
   openModal(patient: Patient): void {
     this.selectedPatient = patient;
@@ -85,9 +106,9 @@ export class DisplayDataComponent {
     this.currentPage = page;
   }
 
-  get totalPages(): number {
-    return Math.ceil(this.filteredPatients.length / this.itemsPerPage);
-  }
+  // get totalPages(): number {
+  //   return Math.ceil(this.filteredPatients.length / this.itemsPerPage);
+  // }
 
   constructor(private patientService: PatientService) {}
 
