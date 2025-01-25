@@ -2,7 +2,8 @@
     <h1>Details</h1>
 
     <button mat-flat-button color="primary" routerLink="/patients">Back</button>
-    <button mat-flat-button color="primary" routerLink="/patient-detail/{{selectedPatient.id}}">Edit</button>
+    <button mat-flat-button color="primary" (click)="(openModal(selectedPatient))">Edit</button> 
+    <!-- routerLink="/patient-detail/{{selectedPatient.id}} -->
 
     <table>
       <tr>
@@ -26,4 +27,14 @@
   <div *ngIf="!selectedPatient">
     <p>No patient selected.</p>
   </div>
+
+  <div id="edit-modal">
+    <div class="modal-content">
+        <app-patient-detail
+        *ngIf="selectedPatient"
+        [patient]="selectedPatient"
+        (closeModal)="closeModal()">
+        </app-patient-detail>
+    </div> 
+  </div> 
   

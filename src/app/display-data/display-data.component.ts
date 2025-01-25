@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule, Router } from '@angular/router';
 import { PatientService } from '../patient.service';
 import { AddPatientComponent } from '../add-patient/add-patient.component';
+import { DetailsComponent } from '../details/details.component';
 import { PatientDetailComponent } from '../patient-detail/patient-detail.component';
 import  { patientData }  from '../data';
 import { Patient } from '../models';
@@ -21,7 +22,8 @@ import { Patient } from '../models';
     CommonModule,
     MatDividerModule,
     PatientDetailComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    DetailsComponent
   ],
   templateUrl: './display-data.component.html',
   styleUrls: ['./display-data.component.scss']
@@ -34,8 +36,8 @@ export class DisplayDataComponent {
   @Input() searchTerm: string = '';
   filteredPatients: Patient[] = [...this.patientData]; 
 
-  currentPage: number = 1; // Current page
-  itemsPerPage: number = 5; // Items per page
+  currentPage: number = 1; 
+  itemsPerPage: number = 5;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['searchTerm']) {
@@ -50,7 +52,7 @@ export class DisplayDataComponent {
 
   filterPatients(): void {
     const lowercasedTerm = this.searchTerm.toLowerCase();
-    this.filteredPatients = this.patientData.filter(patient =>
+    this.filteredPatients = this.patientData.filter(patient => // filteredPatients
       patient.fullName.toLowerCase().includes(lowercasedTerm)
     );
     this.currentPage = 1;
@@ -85,5 +87,11 @@ export class DisplayDataComponent {
 
   get totalPages(): number {
     return Math.ceil(this.filteredPatients.length / this.itemsPerPage);
+  }
+
+  constructor(private patientService: PatientService) {}
+
+  selectPatient(patient: Patient): void {
+    this.patientService.setSelectedPatient(patient);
   }
 }
