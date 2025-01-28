@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterModule, RouterLink } from '@angular/router';
+import { PatientService } from '../patient.service';
 import { patientData } from '../data';
 import { Patient } from '../models';
 import { EditService } from '../edit.service';
@@ -27,7 +28,7 @@ export class PatientDetailComponent implements OnInit {
   @Input() patient: Patient | undefined;
   @Output() closeModal = new EventEmitter<void>();
 
-  constructor(private router: Router, private editService: EditService) {}
+  constructor(private router: Router, private editService: EditService, private patientService: PatientService) {}
 
   fullName: string = '';
   amka: string = '';
@@ -62,8 +63,12 @@ export class PatientDetailComponent implements OnInit {
       admissionDate: this.admissionDate,
     };
 
-    this.editService.updatePatient(updatedPatient); // Update the patient in the service
-
+    this.editService.updatePatient(updatedPatient); 
+    this.patientService.setSelectedPatient(updatedPatient);
     this.closeModal.emit();
+  }
+
+  cancel(): void {
+    this.closeModal.emit(); // Close modal without saving
   }
 }

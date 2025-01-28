@@ -46,7 +46,8 @@ export class DetailsComponent implements OnInit {
     if (modal) {
       modal.style.display = 'none';
     }
-    this.selectedPatient = null;
+
+    this.selectedPatient = this.patientService.getSelectedPatient();
   }
 
   selectPatient(patient: Patient): void {
@@ -58,5 +59,7 @@ export class DetailsComponent implements OnInit {
   //     this.openModal.emit(this.selectedPatient);
   //   }
   // }
+
+  
 }
 
