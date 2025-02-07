@@ -4,6 +4,7 @@ import { RouterModule, RouterLink } from '@angular/router';
 import { PatientService } from '../patient.service';
 import { MatButton } from '@angular/material/button';
 import { PatientDetailComponent } from '../patient-detail/patient-detail.component';
+import { TradesComponent } from '../trades/trades.component';
 import { ActivatedRoute } from '@angular/router';
 import { patientData } from '../data';
 import { Patient } from '../models';
@@ -16,7 +17,8 @@ import { Patient } from '../models';
     RouterModule,
     RouterLink,
     CommonModule,
-    PatientDetailComponent
+    PatientDetailComponent,
+    // TradesComponent
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'

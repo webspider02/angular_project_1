@@ -16,7 +16,7 @@ import { SettingsComponent } from '../settings/settings.component';
 import { patientData } from '../data'
 import { Patient } from '../models';
 import { Router } from 'express';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -36,7 +36,8 @@ import { RouterOutlet, RouterLink } from '@angular/router';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule, 
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'

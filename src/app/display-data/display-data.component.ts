@@ -22,8 +22,8 @@ import { Patient } from '../models';
     CommonModule,
     MatDividerModule,
     PatientDetailComponent,
-    AddPatientComponent,
-    DetailsComponent
+    // AddPatientComponent,
+    // DetailsComponent
   ],
   templateUrl: './display-data.component.html',
   styleUrls: ['./display-data.component.scss']

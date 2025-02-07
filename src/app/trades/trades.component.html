@@ -1,0 +1,15 @@
+<h2>Financial Trades</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Stock</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <tr *ngFor="let trade of trades">
+    <td>{{ trade.id }}</td>
+    <td>{{ trade.stock }}</td>
+    <td>{{ trade.price }}</td>
+    <td>{{ trade.quantity }}</td>
+  </tr>
+</table>

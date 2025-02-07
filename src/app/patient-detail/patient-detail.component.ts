@@ -14,7 +14,7 @@ import { EditService } from '../edit.service';
   selector: 'app-patient-detail',
   standalone: true,
   imports: [
-    RouterLink,
+    // RouterLink,
     RouterModule,
     CommonModule,
     FormsModule,
