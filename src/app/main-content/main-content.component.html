@@ -1,0 +1,12 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <button mat-button routerLink="/patients">Users</button>
+        <button mat-button routerLink="/settings">Settings</button>
+    </mat-drawer>
+    
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+         <!-- <app-settings></app-settings> -->
+        <!-- <app-patients></app-patients> -->
+    </mat-drawer-content>
+ </mat-drawer-container>

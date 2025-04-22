@@ -9,40 +9,29 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule } from '@angular/router';
-
-import { HeaderComponent } from './header/header.component';
-import { MainContentComponent } from './main-content/main-content.component';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-main-content',
   standalone: true,
   imports: [
-    HeaderComponent,
-    MatListModule,
     CommonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatButtonModule,
     MatIconModule,
+    MatButtonModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    RouterLink,
     RouterModule,
-    MainContentComponent
-],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    RouterOutlet
+  ],
+  templateUrl: './main-content.component.html',
+  styleUrl: './main-content.component.scss'
 })
-export class AppComponent {
-//   patientData: Patient[] = patientData;
+export class MainContentComponent {
 
-//  selectedPatient: Patient | null = null
-
-//   selectPatient(patient: Patient): void {
-//     this.selectedPatient = patient;
-//   } 
-
-// patients:  Patient[]= patientData;
 }
