@@ -1,4 +1,4 @@
-<div *ngIf="trades.length > 1000; else loading">
+<div *ngIf="trades.length > 0; else loading">
     <div *ngFor="let trade of trades" class="trade-block">
       <h3>Trade #{{ trade.id }} - {{ trade.traderName }}</h3>
       <p><strong>Date:</strong> {{ trade.date }}</p>

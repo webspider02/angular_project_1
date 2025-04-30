@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { FinancialTrade } from '../financial-trade.model';
 import { FinancialTradeService } from '../financial-trade.service';
 import { HttpClient } from '@angular/common/http';
@@ -14,13 +14,17 @@ import { CommonModule } from '@angular/common';
 export class FinancialTradeFormComponent implements OnInit {
   trades: FinancialTrade[] = [];
 
+  private destroyRef = inject(DestroyRef);
+
   constructor(private tradeService: FinancialTradeService) {}
 
   ngOnInit() {
-    this.tradeService.getFinancialTrades().subscribe({
+    const subscription =this.tradeService.getFinancialTrades().subscribe({
       next: data => this.trades = data,
       error: err => console.error('Error loading trades:', err)
     });
+
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 }
 
