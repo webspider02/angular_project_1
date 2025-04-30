@@ -1,0 +1,35 @@
+<div *ngIf="trades.length > 1000; else loading">
+    <div *ngFor="let trade of trades" class="trade-block">
+      <h3>Trade #{{ trade.id }} - {{ trade.traderName }}</h3>
+      <p><strong>Date:</strong> {{ trade.date }}</p>
+      <p><strong>Series Code:</strong> {{ trade.seriesCode }}</p>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let line of trade.financialTradeLines">
+            <td>{{ line.itemName }}</td>
+            <td>{{ line.quantity }}</td>
+            <td>{{ line.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading">
+      <p>Loading trades
+        <span class="dot-one">.</span>
+        <span class="dot-two">.</span>
+        <span class="dot-three">.</span>
+      </p>
+    </div>
+  </ng-template>

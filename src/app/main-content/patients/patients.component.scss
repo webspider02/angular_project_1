@@ -5,6 +5,8 @@ div.search-patient-card {
     margin: 10px auto 10px auto;
     background-color: #e5e5e5;
     border-radius: 10px;
+    padding-right: 5px;
+
 
     input {
         float: left;
@@ -12,6 +14,7 @@ div.search-patient-card {
         height: 40px;
         border-radius: 10px;
         border: 1px solid rgb(204, 204, 204);
+        text-indent: 5px;
     }
 
     button[mat-flat-button] {
