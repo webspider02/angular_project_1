@@ -1,4 +1,4 @@
-<div *ngIf="trades.length > 0; else loading">
+<!-- <div *ngIf="trades.length > 0; else loading">
     <div *ngFor="let trade of trades" class="trade-block">
       <h3>Trade #{{ trade.id }} - {{ trade.traderName }}</h3>
       <p><strong>Date:</strong> {{ trade.date }}</p>
@@ -22,6 +22,30 @@
       </table>
       <hr />
     </div>
+  </div> -->
+
+  <div *ngIf="trades.length > 0; else loading">
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Series Code</th>
+      </tr>
+  
+      <ng-container *ngFor="let trade of trades">   
+        <tr>
+          <td> {{ trade.id }} </td>
+          <td>
+            <!-- {{ trade.traderName }} -->
+            <!-- <a routerLink="/trader-detail" (click)="selectTrader(trade)"> {{ trade.traderName }} </a> -->
+            <a routerLink="/trader-detail" (click)="selectTrader(trade)"> {{ trade.traderName }} </a>
+          </td>        
+          <td> {{ trade.date }} </td>
+          <td> {{ trade.seriesCode }} </td>
+        </tr>
+      </ng-container>
+    </table>
   </div>
   
   <ng-template #loading>

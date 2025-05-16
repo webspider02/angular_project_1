@@ -6,10 +6,12 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 import { SettingsComponent } from './main-content/settings/settings.component';
 import { DashboardComponent } from './main-content/dashboard/dashboard.component';
 import { FinancialTradeFormComponent } from './main-content/financial-trade-form/financial-trade-form.component';
+import { FinancialTradesDetailsComponent } from './main-content/financial-trade-form/financial-trade-details/financial-trade-details.component';
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
     { path: 'financial', component: FinancialTradeFormComponent },
+    { path: 'trader-detail', component: FinancialTradesDetailsComponent }, // { path: 'trader-detail/:id', }
     { path: 'patients', component: PatientsComponent },
     { path: 'patient-detail/:id', component: PatientDetailComponent },
     { path: 'settings', component: SettingsComponent },

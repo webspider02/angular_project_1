@@ -1,1 +1,15 @@
-<p>dashboard works!</p>
+<div *ngIf="trades.length > 0; else loading">
+    <h2>Total Income from All Trades: <span>{{ grandTotal }} €</span></h2>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading">
+      <p>Loading trades
+        <span class="dot-one">.</span>
+        <span class="dot-two">.</span>
+        <span class="dot-three">.</span>
+      </p>
+    </div>
+  </ng-template>
+  
+  

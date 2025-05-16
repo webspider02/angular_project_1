@@ -30,19 +30,11 @@ import { MainContentComponent } from './main-content/main-content.component';
     MatIconModule,
     MatToolbarModule,
     RouterModule,
-    MainContentComponent
+    MainContentComponent,
+    RouterModule
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-//   patientData: Patient[] = patientData;
-
-//  selectedPatient: Patient | null = null
-
-//   selectPatient(patient: Patient): void {
-//     this.selectedPatient = patient;
-//   } 
-
-// patients:  Patient[]= patientData;
 }

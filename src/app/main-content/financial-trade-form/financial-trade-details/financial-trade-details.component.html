@@ -1,0 +1,41 @@
+  <button mat-flat-button color="primary" routerLink="/financial">Back</button>
+  <button mat-flat-button color="primary" (click)="openEditDialog(trade!)">Edit</button>
+  
+  <div class="cl" *ngIf="trade!">
+  
+    <h2>Details for {{ trade!.traderName }}</h2>
+    <p><strong>ID:</strong> {{ trade!.id }}</p>
+    <p><strong>Date:</strong> {{ trade!.date }}</p>
+    <p><strong>Series Code:</strong> {{ trade!.seriesCode }}</p>
+  
+    <h3>Trade Lines</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ trade!.financialTradeLines[0].itemName }}</td>
+          <td>{{ trade!.financialTradeLines[0].quantity }}</td>
+          <td>{{ trade!.financialTradeLines[0].price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <div id="edit-modal">
+    <div class="modal-content">
+      <app-edit-modal-trades
+        *ngIf="selectedTrader"
+        [trader]="selectedTrader"
+        (closeModal)="closeModal()"
+        (saveChanges)="onSaveChanges($event)">
+      </app-edit-modal-trades>
+    </div>
+  </div> -->
+  
+  
