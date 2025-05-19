@@ -1,0 +1,30 @@
+.custom-date-field {
+    background-color: #e6f2ff; /* Light blue background */
+    border-radius: 8px;
+    padding: 4px;
+  
+    .mat-form-field-wrapper {
+      padding-bottom: 0; /* optional: reduce spacing */
+    }
+  
+    .mat-input-element {
+      font-size: 14px;
+      padding: 6px;
+    }
+  
+    .mat-datepicker-toggle {
+      button {
+        background-color: #0077cc;   /* Blue calendar button */
+        border-radius: 4px;
+        padding: 4px;
+        height: 32px;
+        width: 32px;
+      }
+  
+      mat-icon {
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
+  

@@ -23,7 +23,7 @@ body {
       margin: 10px auto;
     }
   
-    div.trader-detail-card button {
+    div.trader-detail-card button:not(.mat-mdc-icon-button) {
       margin: 0 auto;
       display: block;
       background-color: green;
@@ -36,5 +36,24 @@ body {
       width: 110px;
     }
   }
-  
-  
+
+.custom-datepicker-style {
+  background-color: #f0f8ff;
+  color: white;
+  padding: 4px;
+  display: inline-block;
+}
+
+.custom-datepicker-style .mat-datepicker-toggle button {
+  // background-color: #f0f8ff;
+  color: black;
+  height: 32px;
+  width: 32px;
+  padding: 4px;
+  margin-left: 6px;
+}
+
+.custom-datepicker-style .mat-datepicker-toggle mat-icon {
+  color: white;
+  font-size: 18px;
+}

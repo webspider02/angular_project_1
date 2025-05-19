@@ -1,8 +1,8 @@
    <div class="trader-detail-card">
-    <mat-form-field>
+    <!-- <mat-form-field>
       <mat-label>Date</mat-label>
       <input matInput [(ngModel)]="editedTrader.date">
-    </mat-form-field>
+    </mat-form-field> -->
     <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker> -->
 
@@ -13,7 +13,14 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field> -->
       
-  
+      <mat-form-field appearance="fill" class="custom-datepicker-style">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="editedTrader.date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker panelClass="custom-datepicker-panel"></mat-datepicker>
+      </mat-form-field>
+      
+
     <mat-form-field>
       <mat-label>Series Code</mat-label>
       <input matInput [(ngModel)]="editedTrader.seriesCode">
