@@ -1,29 +1,3 @@
-<!-- <div *ngIf="trades.length > 0; else loading">
-    <div *ngFor="let trade of trades" class="trade-block">
-      <h3>Trade #{{ trade.id }} - {{ trade.traderName }}</h3>
-      <p><strong>Date:</strong> {{ trade.date }}</p>
-      <p><strong>Series Code:</strong> {{ trade.seriesCode }}</p>
-  
-      <table>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Price (€)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let line of trade.financialTradeLines">
-            <td>{{ line.itemName }}</td>
-            <td>{{ line.quantity }}</td>
-            <td>{{ line.price }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr />
-    </div>
-  </div> -->
-
   <div *ngIf="trades.length > 0; else loading">
     <table>
       <tr>
@@ -39,7 +13,7 @@
           <td>
             <!-- {{ trade.traderName }} -->
             <!-- <a routerLink="/trader-detail" (click)="selectTrader(trade)"> {{ trade.traderName }} </a> -->
-            <a routerLink="/trader-detail" (click)="selectTrader(trade)"> {{ trade.traderName }} </a>
+            <a [routerLink]="['/trader', trade!.id]" (click)="selectTrader(trade)"> {{ trade.traderName }} </a>
           </td>        
           <td> {{ trade.date }} </td>
           <td> {{ trade.seriesCode }} </td>
