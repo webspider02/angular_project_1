@@ -10,8 +10,14 @@ import { FinancialTradesDetailsComponent } from './main-content/financial-trade-
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
-    { path: 'trader', component: FinancialTradeFormComponent },
-    { path: 'trader/:id', component: FinancialTradesDetailsComponent }, // { path: 'trader-detail/:id', }
+    { 
+        path: 'trader', 
+        component: FinancialTradeFormComponent,
+        children: [
+            { path: 'trader/:id', component: FinancialTradesDetailsComponent },
+        ] 
+    },
+    // { path: 'trader/:id', component: FinancialTradesDetailsComponent }, // { path: 'trader-detail/:id', }
     { path: 'patients', component: PatientsComponent },
     { path: 'patient-detail/:id', component: PatientDetailComponent },
     { path: 'settings', component: SettingsComponent },

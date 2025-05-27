@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, input, OnInit } from '@angular/core';
 import { FinancialTrade } from '../financial-trade.model';
 import { FinancialTradeService } from '../financial-trade.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 })
 export class FinancialTradeFormComponent implements OnInit {
   trades: FinancialTrade[] = [];
+
+  traderId = input.required<number>();
 
   private destroyRef = inject(DestroyRef);
   private tradeService = inject(FinancialTradeService);
