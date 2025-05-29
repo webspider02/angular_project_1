@@ -13,7 +13,8 @@
           <td>
             <!-- {{ trade.traderName }} -->
             <!-- <a routerLink="/trader-detail" (click)="selectTrader(trade)"> {{ trade.traderName }} </a> -->
-          <a [routerLink]="['/trader', traderId()]" (click)="selectTrader(trade)"> {{ trade.traderName }} </a>
+          <!-- <a [routerLink]="['/trader', trade.id]" (click)="selectTrader(trade)"> {{ trade.traderName }} </a> -->
+          <a (click)="openEditDialog(trade!)"> {{ trade.traderName }} </a>
           </td>        
           <td> {{ trade.date }} </td>
           <td> {{ trade.seriesCode }} </td>

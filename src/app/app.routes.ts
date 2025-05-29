@@ -13,11 +13,21 @@ export const routes: Routes = [
     { 
         path: 'trader', 
         component: FinancialTradeFormComponent,
-        children: [
-            { path: 'trader/:id', component: FinancialTradesDetailsComponent },
-        ] 
+        // children: [
+        //     { 
+        //         path: 'trader/:id', 
+        //         // loadComponent: () => import('./main-content/financial-trade-form/financial-trade-details/financial-trade-details.component'),
+        //         component: FinancialTradesDetailsComponent 
+        //     },
+        // ],
     },
-    // { path: 'trader/:id', component: FinancialTradesDetailsComponent }, // { path: 'trader-detail/:id', }
+    { 
+        path: 'trader/:id', 
+        loadComponent: () =>
+            import('./main-content/financial-trade-form/financial-trade-details/financial-trade-details.component')
+              .then(m => m.FinancialTradesDetailsComponent)
+        // component: FinancialTradesDetailsComponent 
+    }, // { path: 'trader-detail/:id', }
     { path: 'patients', component: PatientsComponent },
     { path: 'patient-detail/:id', component: PatientDetailComponent },
     { path: 'settings', component: SettingsComponent },
