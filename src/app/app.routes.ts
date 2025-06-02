@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DetailsComponent } from './details/details.component'; // {path: 'details', component: DetailsComponent}
+import { DetailsComponent } from './details/details.component'; 
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { PatientsComponent } from './main-content/patients/patients.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
@@ -9,7 +9,7 @@ import { FinancialTradeFormComponent } from './main-content/financial-trade-form
 import { FinancialTradesDetailsComponent } from './main-content/financial-trade-form/financial-trade-details/financial-trade-details.component';
 
 export const routes: Routes = [
-    { path: '', component: DashboardComponent },
+    { path: '', component: DashboardComponent, title: 'Dashboard' },
     { 
         path: 'trader', 
         component: FinancialTradeFormComponent,
@@ -20,12 +20,14 @@ export const routes: Routes = [
         //         component: FinancialTradesDetailsComponent 
         //     },
         // ],
+        title: 'Trades'
     },
     { 
         path: 'trader/:id', 
         loadComponent: () =>
             import('./main-content/financial-trade-form/financial-trade-details/financial-trade-details.component')
-              .then(m => m.FinancialTradesDetailsComponent)
+              .then(m => m.FinancialTradesDetailsComponent),
+        title: 'Trader Details'
         // component: FinancialTradesDetailsComponent 
     }, // { path: 'trader-detail/:id', }
     { path: 'patients', component: PatientsComponent },
