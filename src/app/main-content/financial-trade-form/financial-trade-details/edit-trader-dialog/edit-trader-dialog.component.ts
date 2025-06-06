@@ -30,66 +30,9 @@ import { FinancialTrade } from '../../../financial-trade.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-// export class EditTraderDialogComponent {
-
-//   @Input() editedTrader: FinancialTrade = {
-//     id: 0,
-//     traderName: '',
-//     date: '',
-//     seriesCode: '',
-//     financialTradeLines: [
-//       {
-//         id: 0,
-//         itemName: '',
-//         quantity: 0,
-//         price: 0
-//       }
-//     ]
-//   };
-
-//   constructor(
-//     private snackBar: MatSnackBar,
-//     private router: Router,
-//     private financialTradeService: FinancialTradeService
-//   ) {}
-
-//   save() {
-//     const tradeLine = this.editedTrader.financialTradeLines?.[0];
-
-//     if (
-//       !this.editedTrader.date ||
-//       !this.editedTrader.seriesCode ||
-//       !tradeLine?.itemName ||
-//       tradeLine.quantity == null ||
-//       tradeLine.price == null
-//     ) {
-//       this.snackBar.open('Please fill in all fields!', 'Close', {
-//         duration: 3000,
-//         panelClass: ['snackbar-error'],
-//         verticalPosition: 'top'
-//       });
-//       return;
-//     }
-
-//     this.financialTradeService.updateTrade(this.editedTrader).subscribe(() => {
-//       this.snackBar.open('Trader saved successfully!', 'Close', {
-//         duration: 3000,
-//         panelClass: ['snackbar-success'],
-//         verticalPosition: 'top'
-//       });
-
-//       this.router.navigate(['/trader', this.editedTrader.id]);
-//     });
-//   }
-
-//   cancel() {
-//     this.router.navigate(['/trader', this.editedTrader.id]);
-//   }
-// }
 
 export class EditTraderDialogComponent {
-  editedTrader!: FinancialTrade; // No default here!
-
+  editedTrader!: FinancialTrade; 
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
@@ -99,10 +42,8 @@ export class EditTraderDialogComponent {
   ngOnInit(): void {
     const selected = this.financialTradeService.getSelectedTrader();
     if (selected) {
-      // Clone the trader object to edit without mutating original until saved
       this.editedTrader = JSON.parse(JSON.stringify(selected));
     } else {
-      // No trader selected, fallback
       this.router.navigate(['/trader']);
     }
   }
@@ -132,7 +73,7 @@ export class EditTraderDialogComponent {
         verticalPosition: 'top'
       });
 
-      this.router.navigate(['/trader', this.editedTrader.id]); // Now this is correct
+      this.router.navigate(['/trader', this.editedTrader.id]); 
     });
   }
 
