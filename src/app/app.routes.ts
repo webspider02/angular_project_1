@@ -7,6 +7,7 @@ import { SettingsComponent } from './main-content/settings/settings.component';
 import { DashboardComponent } from './main-content/dashboard/dashboard.component';
 import { FinancialTradeFormComponent } from './main-content/financial-trade-form/financial-trade-form.component';
 import { FinancialTradesDetailsComponent } from './main-content/financial-trade-form/financial-trade-details/financial-trade-details.component';
+import { EditTraderDialogComponent } from './main-content/financial-trade-form/financial-trade-details/edit-trader-dialog/edit-trader-dialog.component';
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent, title: 'Dashboard' },
@@ -35,5 +36,6 @@ export const routes: Routes = [
     { path: 'settings', component: SettingsComponent },
     { path: 'add-patient', component: AddPatientComponent },
     { path: 'details', component: DetailsComponent },
+    { path: 'edit-trader-dialog', component: EditTraderDialogComponent },
 ];
 

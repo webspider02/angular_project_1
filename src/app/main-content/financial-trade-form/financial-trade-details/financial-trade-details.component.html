@@ -1,6 +1,6 @@
   <button mat-flat-button color="primary" routerLink="/trader">Back</button>
-  <button mat-flat-button color="primary" (click)="openEditDialog(trade!)">Edit</button>
-  
+  <button mat-flat-button color="primary" routerLink="/edit-trader-dialog">Edit</button> <!--  (click)="openEditDialog(trade!)" -->
+   
   <div class="cl" *ngIf="trade!">
   
     <h2>Details for {{ trade!.traderName }}</h2>
